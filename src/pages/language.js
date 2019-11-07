@@ -24,24 +24,29 @@
 import React from 'react';
 
 class Language extends React.Component {
+//*~ Armazenar valores
   constructor(props) {
     super(props);
     this.state = { escolha : '', teste : ''};
 
+    //*~ Prevent Default para deletar o localStorage caso o usuário retorne
     if (localStorage.getItem('idioma')) {
       localStorage.removeItem('idioma');
     }
   }
 
+  //*~ Capturar valor selecionado pelo usuário
   onChange = event => {
     this.setState({ escolha: event.target.value })
   }
 
+  //*~ Quando apertar
   onSearch = event => {
     event.preventDefault();
 
     const { escolha } = this.state;
     
+    //*~ Salvar no localStorage + Verificar se há valor + Alterar página
     if ( escolha === '' || escolha == null){
       console.log("não");
     } else {
@@ -51,6 +56,7 @@ class Language extends React.Component {
     }
   }
 
+  //*~ Retornar pro DOM as informações
   render() {
       return (
         <div>
