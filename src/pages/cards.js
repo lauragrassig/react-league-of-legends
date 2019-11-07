@@ -4,8 +4,6 @@ class cards extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null,
-      isLoaded: false,
       items: []
     };
   }
@@ -16,41 +14,24 @@ class cards extends Component {
       .then(
         (result) => {
           this.setState({
-            isLoaded: true,
             items: result.data
-          });
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
           });
         }
       )
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
-    console.log(items);
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
+    const { items } = this.state;
       return (
         <ul>
           {Object.keys(items).map((key, item) => (
             <li key={item}>
               {items[key].name} - {items[key].title} - {items[key].blurb}
-              <img src={items[key].image}/>
+              <img src={ "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + items[key].id + "_0.jpg" }/>
             </li>
           ))}
         </ul>
       );
-    }
   }
 }
 
