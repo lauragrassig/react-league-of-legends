@@ -39,10 +39,12 @@
 
 import React, { Component } from 'react';
 
+//*~ Váriaveis para o consumo da API
 const linguagem = localStorage.getItem('idioma');
 const URL = "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/" + linguagem + "/champion.json";
 
 class cards extends Component {
+//*~ Armazenar valores
   constructor(props) {
     super(props);
     this.state = {
@@ -50,10 +52,9 @@ class cards extends Component {
       isLoading: false,
       error: null,
     };
-    console.log(this.state);
   }
 
-
+//*~ Consumino a API
   componentDidMount() {
     this.setState({ isLoading: true });
 
@@ -69,20 +70,20 @@ class cards extends Component {
       .catch(error => this.setState ({ error, isLoading: false }));
   }
 
-
+//*~ Retornar pro DOM as informações
   render() {
     const { items, isLoading, error } = this.state;
     if (isLoading) { return <p>Loading ...</p>; }
     if (error) { return <p>{error.message}</p>; }
       return (
-        <ul>
+        <div>
           {Object.keys(items).map((key, item) => (
-            <li key={item}>
+            <div key={item}>
               {items[key].name} - {items[key].title} - {items[key].blurb}
-              {/* <img src={ "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + items[key].id + "_0.jpg" }/> */}
-            </li>
+              <img src={ "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + items[key].id + "_0.jpg" }/>
+            </div>
           ))}
-        </ul>
+        </div>
       );
   }
 }
