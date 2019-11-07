@@ -39,10 +39,8 @@
 
 import React, { Component } from 'react';
 
-const base = "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/";
-const campeao =  "/champion.json";
-const idioma = "en_US";
-const URL = base + idioma + campeao;
+const linguagem = localStorage.getItem('idioma');
+const URL = "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/" + linguagem + "/champion.json";
 
 class cards extends Component {
   constructor(props) {
