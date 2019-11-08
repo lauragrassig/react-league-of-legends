@@ -47,6 +47,16 @@ class cards extends Component {
 //*~ Armazenar valores
   constructor(props) {
     super(props);
+    this.state = {import React, { Component } from 'react';
+
+//*~ Váriaveis para o consumo da API
+const linguagem = localStorage.getItem('idioma');
+const URL = "https://ddragon.leagueoflegends.com/cdn/9.22.1/data/" + linguagem + "/champion.json";
+
+class cards extends Component {
+//*~ Armazenar valores
+  constructor(props) {
+    super(props);
     this.state = {
       items: [],
       isLoading: false,
@@ -76,7 +86,7 @@ class cards extends Component {
     if (isLoading) { return <p>Loading ...</p>; }
     if (error) { return <p>{error.message}</p>; }
       return (
-        <div>
+        <div className="teste">
           {Object.keys(items).map((key, item) => (
             <div key={item}>
               {items[key].name} - {items[key].title} - {items[key].blurb}
