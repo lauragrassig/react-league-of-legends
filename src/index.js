@@ -19,13 +19,13 @@
 
 // render(<App />, document.getElementById("root"));
 
-
 import React from 'react';
 import { render } from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import Language from "./pages/language";
 import Cards from "./pages/cards";
 import Header from "./components/header";
+import './assets/scss/main/main.scss';
 
 class App extends React.Component {
   render() {
@@ -33,10 +33,10 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <Route exact path="/">
-            <Header />
             <Language />
           </Route>
           <Route path="/cards">
+            <Header />
             <Cards />
           </Route>
         </div>
