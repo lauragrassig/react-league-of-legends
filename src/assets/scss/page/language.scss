@@ -31,7 +31,7 @@ body, * {
       background-color: $grey-light;
       color: $login-button-pink-pulse;
       font-size: 1rem;
-      width: 11rem;
+      width: 12rem;
       margin-bottom: 1.5rem;
       height: 2rem;
       border: none;
@@ -49,7 +49,7 @@ body, * {
       text-transform: uppercase;
       border-radius: 0.5rem;
       height: 2rem;
-      width: 11rem;
+      width: 12rem;
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -58,9 +58,6 @@ body, * {
       span { z-index: 5; position: absolute; }
     }
   }
-}
-.teste {
-  color: white;
 }
 
 @keyframes pulse {
