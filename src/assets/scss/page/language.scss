@@ -1,0 +1,106 @@
+body {
+  background-color: #141819 !important;
+}
+
+body, * {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+.wrapper--language {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .box--language {
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+  }
+  .language--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    select {
+      background-color: $grey-light;
+      color: $login-button-pink-pulse;
+      font-size: 1rem;
+      width: 11rem;
+      margin-bottom: 1.5rem;
+      height: 2rem;
+      border: none;
+      text-align: center;
+      border-radius: .5rem;
+      box-shadow: 1px 1px 1px 1px rgba(211, 208, 208, 0.4);
+      text-align-last: center;
+      text-align: center;
+    }
+    .language--button {
+      background-color: $botao;
+      box-shadow: 1px 1px 1px 1px $login-button-pink;
+      border: none;
+      color: white;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
+      height: 2rem;
+      width: 11rem;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      span { z-index: 5; position: absolute; }
+    }
+  }
+}
+.teste {
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  33% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.pulse {
+  position: relative;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $login-button-pink-pulse;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;  
+    opacity: 0;
+    margin: auto;
+  }
+  &:before {
+    animation: pulse 1.5s infinite linear;
+  }
+  &:after {
+    animation: pulse 2s .4s infinite linear;
+  }
+  &:hover:before, &:hover:after {
+    display: none;
+  }
+}

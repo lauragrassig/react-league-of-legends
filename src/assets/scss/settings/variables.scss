@@ -1,64 +1,7 @@
+//~* Colors Variables
+
 $botao : #870434;
+$login-button-pink: rgb(92, 6, 37);
+$login-button-pink-pulse: rgb(153, 31, 76);
 
-body {
-  background-color: #141819 !important;
-}
-
-header {
-  position: absolute;
-  background-color: #eaeaeaeb;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.wrapper--language {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  .box--language {
-    display: flex;
-    flex-direction: column;
-    height: 15rem;
-    width: 80%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-  }
-  .language--form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;
-    select {
-      background-color: #f2f2f2;
-      color: #766e71;
-      font-family: monospace;
-      font-size: 1rem;
-      width: 11rem;
-      margin-bottom: 1.5rem;
-      height: 2rem;
-      font-weight: 800;
-      border: none;
-      text-align: center;
-      border-radius: .5rem;
-      box-shadow: 1px 1px 1px 1px rgba(211, 208, 208, 0.4);
-    } 
-    .language--button {
-      background-color: $botao;
-      box-shadow: 1px 1px 1px 1px rgb(92, 6, 37);
-      border: none;
-      color: white;
-      text-transform: uppercase;
-      font-family: monospace;
-      border-radius: 0.5rem;
-      height: 2rem;
-      width: 11rem;
-    }
-  }
-}
-.teste {
-  color: white;
-}
+$grey-light: #f2f2f2;

@@ -1,37 +1,4 @@
-// import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
-// import SimpleStorage from "react-simple-storage";
-
-// class language extends Component {
-
-//   render() {
-//     return (
-//       <div>
-//         <select value={this.state.selectValue} onChange={this.handleChange}>
-//             <option value="laranja">Laranja</option>
-//             <option value="limao">Limão</option>
-//             <option value="coco">Coco</option>
-//             <option value="manga">Manga</option>
-//           </select>
-//           <Link to="/cards">Link</Link>
-//       </div>
-//     )
-//   }
-// }
-
-// export default language;
-
 import React from 'react';
-
-class Language extends React.Component {
-//*~ Armazenar valores
-  constructor(props) {
-    super(props);
-    this.state = { escolha : '', teste : ''};
-
-    //*~ Prevent Default para deletar o localStorage caso o usuário retorne
-    if (localStorage.getItem('idioma')) {
-      localStorage.removimport React from 'react';
 
 class Language extends React.Component {
 //*~ Armazenar valores
@@ -102,7 +69,7 @@ class Language extends React.Component {
                 <option value="hu_HU">German (Germany)</option>
                 <option value="hu_HU">Hungarian (Hungary)</option>
               </select>
-            <button className="language--button" type="submit">Acessar</button>
+            <button className="language--button pulse" type="submit"><span>Acessar</span></button>
             </div>
           </form>
         </div>
